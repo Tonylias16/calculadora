@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Elegante</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="theme-switch-wrapper">
+        <span class="theme-switch-label" id="theme-label">Modo oscuro</span>
+        <label class="switch">
+            <input type="checkbox" id="theme-toggle" aria-labelledby="theme-label">
+            <span class="slider"></span>
+        </label>
+    </div>
+    
+    <div class="calculator" role="application" aria-label="Calculadora">
+        <div class="display" aria-live="polite">
+            <div class="display-history" id="history" aria-hidden="true"></div>
+            <div class="display-result" id="result" aria-label="Resultado actual">0</div>
+        </div>
+        <div class="buttons">
+            <button class="clear" onclick="clearAll(event)" aria-label="Borrar todo">AC</button>
+            <button class="delete" onclick="backspace(event)" aria-label="Retroceder">⌫</button>
+            <button class="operator" onclick="appendOperator('%', event)" aria-label="Porcentaje">%</button>
+            <button class="operator" onclick="appendOperator('/', event)" aria-label="Dividir">/</button>
+            
+            <button onclick="appendNumber('7', event)" aria-label="Siete">7</button>
+            <button onclick="appendNumber('8', event)" aria-label="Ocho">8</button>
+            <button onclick="appendNumber('9', event)" aria-label="Nueve">9</button>
+            <button class="operator" onclick="appendOperator('*', event)" aria-label="Multiplicar">×</button>
+            
+            <button onclick="appendNumber('4', event)" aria-label="Cuatro">4</button>
+            <button onclick="appendNumber('5', event)" aria-label="Cinco">5</button>
+            <button onclick="appendNumber('6', event)" aria-label="Seis">6</button>
+            <button class="operator" onclick="appendOperator('-', event)" aria-label="Restar">-</button>
+            
+            <button onclick="appendNumber('1', event)" aria-label="Uno">1</button>
+            <button onclick="appendNumber('2', event)" aria-label="Dos">2</button>
+            <button onclick="appendNumber('3', event)" aria-label="Tres">3</button>
+            <button class="operator" onclick="appendOperator('+', event)" aria-label="Sumar">+</button>
+            
+            <button class="span-2" onclick="appendNumber('0', event)" aria-label="Cero">0</button>
+            <button onclick="appendNumber('.', event)" aria-label="Punto decimal">.</button>
+            <button class="equals" onclick="calculate(event)" aria-label="Calcular resultado">=</button>
+        </div>
+    </div>
+</body>
+</html>
